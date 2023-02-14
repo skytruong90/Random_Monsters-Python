@@ -7,7 +7,6 @@
 3. Run the project with a Pycharm IDE.
 
 ## What I have learned: 
-1. 
-
-## Sceenshot:
-<img src= "Capture.PNG" width="400">
+1. Python is cool
+2. Python code structure
+3. Python is versatile
