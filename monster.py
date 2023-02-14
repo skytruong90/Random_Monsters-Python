@@ -15,12 +15,12 @@ perk3 = ["Brute Force", "Deadly Brawler", "Evolved Claw", "Evolved Haste", "Evol
          "Grounder", "Infectious Wounds", "Paralyzing Attack", "Plated Armor", "Unending Endurance", "Unkillable"]
 
 
-# Choose monster at random
+# Choose a monsters at random
 def choose_monster():
     return random.choice(monsters)
 
 
-# Choose all perks at random, I kind of want to make this something I can choose though
+# Choose all perks at random
 def choose_perks(num_perks):
     if num_perks < 1 or num_perks > 3:
         print("Error: Invalid number of perks. Please choose a number between 1 and 3.")
@@ -36,14 +36,14 @@ def choose_perks(num_perks):
     return chosen_perks
 
 
-# print it out baby
+# print your monster perks
 def print_picks(monster, perks):
     print("You will play as the " + monster.upper() + " with the following perks:\n 🔶" + monster);
     for perk in perks:
         print(" ▫️" + perk)
 
 
-# do stuff
+# if-statment that choses your monsters
 if __name__ == "__main__":
     print("Make this randomizer yourself by clicking the card on the top right!\n\"Starting in:")
     for i in range(3, 0, -1):
