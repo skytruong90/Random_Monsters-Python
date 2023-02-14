@@ -1,54 +1,26 @@
 import random
 import time
 
-# List of all monsters
-monsters = ["Goliath", "Kraken", "Wraith", "Behemoth", "Gorgon", "Elder Kraken", "Meteor Goliath", "Glacial Behemoth"]
-# The weak perks
-perk1 = ["Brawler", "Enhanced Senses", "Fast Climber", "Haste", "Heavy Armor", "Hunger", "Leg Breaker", "Savage Nature",
-         "Unstoppable"]
-# The mid perks
-perk2 = ["Aggravated Wounds", "Crippling Attack", "Endurance", "Feral Instincts", "Fly Swatter", "Heavy Hitter",
-         "Insatiable Hunger", "Mutated Claw", "Mutated Haste", "Mutated Recovery", "Mutated Senses", "Scale Armor",
-         "Speed Climber"]
-# The strong perks
-perk3 = ["Brute Force", "Deadly Brawler", "Evolved Claw", "Evolved Haste", "Evolved Recovery", "Ferocious Bloodlust",
-         "Grounder", "Infectious Wounds", "Paralyzing Attack", "Plated Armor", "Unending Endurance", "Unkillable"]
+# Lists of possible names and abilities
+names = ["Gorgon", "Kraken", "Cerberus", "Manticore", "Hydra"]
+abilities = {
+    "Gorgon": ["Petrifying Gaze", "Venomous Bite"],
+    "Kraken": ["Tentacle Slam", "Ink Cloud"],
+    "Cerberus": ["Fire Breath", "Shadow Step"],
+    "Manticore": ["Poison Quills", "Flight"],
+    "Hydra": ["Regeneration", "Acidic Spit"]
+}
 
+# Wait for 3 seconds before generating the monster name and abilities
+print("Get ready! Starting in 3 seconds...")
+time.sleep(3)
 
-# Choose a monsters at random
-def choose_monster():
-    return random.choice(monsters)
+# Randomly choose a monster name from the list
+name = random.choice(names)
 
+# Choose two random abilities for the monster
+chosen_abilities = random.sample(abilities[name], 2)
 
-# Choose all perks at random
-def choose_perks(num_perks):
-    if num_perks < 1 or num_perks > 3:
-        print("Error: Invalid number of perks. Please choose a number between 1 and 3.")
-        return []
-    chosen_perks = []
-    for i in range(num_perks):
-        if i == 0:
-            chosen_perks.append(random.choice(perk1))
-        elif i == 1:
-            chosen_perks.append(random.choice(perk2))
-        else:
-            chosen_perks.append(random.choice(perk3))
-    return chosen_perks
-
-
-# print your monster perks
-def print_picks(monster, perks):
-    print("You will play as the " + monster.upper() + " with the following perks:\n 🔶" + monster);
-    for perk in perks:
-        print(" ▫️" + perk)
-
-
-# if-statment that choses your monsters
-if __name__ == "__main__":
-    print("Make this randomizer yourself by clicking the card on the top right!\n\"Starting in:")
-    for i in range(3, 0, -1):
-        print(i)
-        time.sleep(1)
-    monster = choose_monster()
-    perks = choose_perks(3)
-    print_picks(monster, perks)
+# Print the monster's name and abilities
+print("Your monster's name is:", name)
+print("Your monster's abilities are:", chosen_abilities[0], "and", chosen_abilities[1])
